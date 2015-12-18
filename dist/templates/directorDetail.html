@@ -1,0 +1,31 @@
+<div layout="row" class="director-detail">
+  <div flex="33">
+    <img src="{{director.image}}" class="image-director">
+  </div>
+  <div flex="66" class="director-description">
+    <h2>Director details</h2>
+    <p>{{director.bio}}</p>
+    <ul>
+      <li><span class="description">Full Name: </span><span>{{director.fullName}}</span></li>
+      <li><span class="description">Sex: </span><span>{{director.sex}}</span></li>
+      <li><span class="description">Nationality: </span><span>{{director.nationality}}</span></li>
+      <li><span class="description">State: </span><span>{{director.state}}</span></li>
+      <li><span class="description">City: </span><span>{{director.city}}</span></li>
+      <li><span class="description">Dob: </span><span>{{director.dob}}</span></li>
+      <li><span class="description">Age: </span><span>{{director.age}}</span></li>
+      <li><span class="description">Spouse: </span><span>{{director.spouse}}</span></li>
+    </ul>
+    <span>BlockBusters: </span>
+    <ul>
+      <li ng-repeat="blockbuster in director.blockbusters">
+        <span>{{blockbuster.release}} - {{blockbuster.movieName}}</span>
+      </li>
+    </ul>
+    <div ng-repeat="blockbuster in blockbusters">{{director.blockbuster.movieName}} {{director.blockbuster.release}}</div>
+    <span class="description">Children</span>
+    <div ng-repeat="child in director.children">{{child}}</div>
+  </div>
+</div>
+<div>
+  <a href="#/directors">&lt Back Director List</a>
+</div>

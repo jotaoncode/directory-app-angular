@@ -1,0 +1,14 @@
+<table class="table-directors">
+  <thead class="table-header">
+    <th ng-repeat="header in headers">
+      {{header.name}}
+    </th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="director in directorList" ng-click="directorsDetail($index)">
+      <td ng-repeat="attribute in director" class="director-attr">
+        {{attribute}}
+      </td>
+    </tr>
+  </tbody>
+</table>
