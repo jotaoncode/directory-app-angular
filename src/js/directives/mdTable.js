@@ -1,14 +1,24 @@
 var fs = require('fs');
-var template = fs.readFileSync(__dirname + '/../../templates/table.html', 'utf8');
+var template = fs.readFileSync(__dirname + '/table.html', 'utf8');
 
 var TableDirective = function () {
   return {
-    controller: function ($scope, $location) {
-      $scope.directorsDetail = function ($directorId) {
-        $location.url('/directors/' + $directorId);
+    link: function (scope, el, attrs) {
+      scope.details = attrs.details;
+    },
+    controller: function ($location) {
+      this.goToDetail = function ($directorId, details) {
+        $location.url('/' + details + '/' + $directorId);
       };
     },
-    template: template
+    restrict: 'E',
+    controllerAs: 'tableCtrl',
+    template: template,
+    scope: {
+      headers: "=",
+      content: "=",
+      details: "@"
+    }
   };
 };
 

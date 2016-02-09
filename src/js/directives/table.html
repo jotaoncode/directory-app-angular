@@ -5,8 +5,8 @@
     </th>
   </thead>
   <tbody>
-    <tr ng-repeat="director in directorList" ng-click="directorsDetail($index)">
-      <td ng-repeat="attribute in director" class="director-attr">
+    <tr ng-repeat="row in content" ng-click="tableCtrl.goToDetail($index, details)">
+      <td ng-repeat="attribute in row" class="director-attr">
         {{attribute}}
       </td>
     </tr>
