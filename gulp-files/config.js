@@ -18,32 +18,24 @@ module.exports = {
    * Jshint
    */
   jshint: {
-    src: src + '/js/**/*.js'
+    src: src + '/**/*.js'
   },
   /**
    * JSCS
    */
   jscs: {
-    src: src + '/js/**/*.js'
+    src: src + '/**/*.js'
   },
   /**
    * Sass
    */
   sass: {
-    src      : src + "/sass/app.scss",
-    srcWatch : src + "/sass/**/*.scss",
+    src      : src + "/app.scss",
+    srcWatch : src + "/**/*.scss",
     dest     : dest + "/css",
     settings : {
       indentedSyntax: true
     }
-  },
-  /**
-   * Templates
-   * (like import reference)
-   */
-  templates: {
-    src: src + "/assets/templates/**",
-    dest: dest + "/assets/templates"
   },
   /**
    * Fonts
@@ -80,12 +72,12 @@ module.exports = {
    */
   browserify: {
     bundleConfigs: [{
-      entries: src + '/js/app.js',
+      entries: src + '/app.js',
       dest: dest + '/js/',
       outputName: 'app.js',
-      extensions: ['.hbs']
+      extensions: []
     }, {
-      entries: src + '/js/vendors.js',
+      entries: src + '/vendors.js',
       dest: dest + '/js/',
       outputName: 'vendors.js',
       // list of modules to make require-able externally
@@ -101,7 +93,7 @@ module.exports = {
    */
   default: {
     cssSrc: src + '/css/*.scss',
-    jsSrc: src + '/js/app.js',
+    jsSrc: src + '/app.js',
     dest: dest + '/js/',
     watch: true,
     debug: true
