@@ -1,0 +1,14 @@
+<table class="table-directors">
+  <thead class="table-header">
+    <th ng-repeat="header in headers">
+      {{header.name}}
+    </th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="row in content" ng-click="tableCtrl.goToDetail($index, details)">
+      <td ng-repeat="attribute in row" class="director-attr">
+        {{attribute}}
+      </td>
+    </tr>
+  </tbody>
+</table>
