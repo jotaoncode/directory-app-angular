@@ -14194,6 +14194,15 @@ md-tooltip {
   md-whiteframe {
     border: 1px solid #fff; } }
 
+ul {
+  list-style-type: none; }
+
+.container-view {
+  margin: 0 5% 0 5%; }
+
+.principal-header {
+  text-align: center; }
+
 .table-directors {
   width: 100%; }
   .table-directors .table-header {
