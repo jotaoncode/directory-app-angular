@@ -4,6 +4,9 @@ var tableDirective = require('../../directives/mdTable');
 function DirectorsCtrl ($scope, $location) {
   //Headers of table
   $scope.headers =  [{
+    name: "Id",
+    field: 'id'
+  }, {
     name: "Name",
     field: 'name'
   }, {
@@ -24,7 +27,20 @@ function DirectorsCtrl ($scope, $location) {
   }, {
     name: "blockbuster",
     field: 'blockbuster'
+  }, {
+    name: "options",
+    field: "options"
   }];
+  _.each(directors, function (director) {
+    director.options = {
+      isOptions: true,
+      isButton: true,
+      click: function (directorClicked) {
+        directors = _.without(directors, _.findWhere(directors, {id: directorClicked.id}));
+        $scope.content = directors;
+      }
+    };
+  });
   $scope.content = directors;
 }
 

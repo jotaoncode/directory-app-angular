@@ -5,9 +5,10 @@
     </th>
   </thead>
   <tbody>
-    <tr ng-repeat="row in content" ng-click="tableCtrl.goToDetail($index, details)">
+    <tr ng-repeat="row in content">
       <td ng-repeat="attribute in row" class="director-attr">
-        {{attribute}}
+        <button ng-show="attribute.isButton" ng-click="attribute.click(row)">x</button>
+        <span ng-hide="attribute.isOptions"  ng-click="tableCtrl.goToDetail($index, details)">{{attribute}}</span>
       </td>
     </tr>
   </tbody>
